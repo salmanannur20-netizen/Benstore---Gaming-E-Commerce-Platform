@@ -1,2 +1,24 @@
-# Benstore---Gaming-E-Commerce-Platform
-A responsive gaming e-commerce platform featuring product catalog management, search and filtering, shopping cart, wishlist, and checkout workflow.
+# Benstore
+
+A responsive gaming e-commerce platform built with HTML, CSS, and JavaScript.
+
+## Features
+
+- Product Catalog
+- Search & Filtering
+- Shopping Cart
+- Wishlist
+- User Authentication
+- Checkout System
+- Responsive Design
+
+## Technologies
+
+- HTML5
+- CSS3
+- JavaScript
+- Local Storage
+
+## Screenshots
+
+(Add screenshots here)
