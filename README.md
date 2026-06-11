@@ -27,7 +27,7 @@ A responsive gaming e-commerce platform built with HTML, CSS, and JavaScript, de
 
 Modern landing page featuring promotional banners, featured products, and intuitive navigation.
 
-![Homepage](screenshots/homepage.png)
+![Homepage](screenshots/homepage.jpeg)
 
 ---
 
@@ -35,7 +35,7 @@ Modern landing page featuring promotional banners, featured products, and intuit
 
 Dynamic product catalog with search and filtering functionality for efficient product discovery.
 
-![Product Catalog](screenshots/store.png)
+![Product Catalog](screenshots/store.jpeg)
 
 ---
 
@@ -43,7 +43,7 @@ Dynamic product catalog with search and filtering functionality for efficient pr
 
 Interactive shopping cart allowing users to manage selected products and review purchase summaries.
 
-![Shopping Cart](screenshots/cart.png)
+![Shopping Cart](screenshots/cart.jpeg)
 
 ---
 
@@ -51,7 +51,7 @@ Interactive shopping cart allowing users to manage selected products and review 
 
 Wishlist feature enabling users to save favorite products for future purchases.
 
-![Wishlist](screenshots/wishlist.png)
+![Wishlist](screenshots/wishlist.jpeg)
 
 ---
 
@@ -59,7 +59,7 @@ Wishlist feature enabling users to save favorite products for future purchases.
 
 Streamlined checkout process for reviewing orders and completing purchases.
 
-![Checkout](screenshots/checkout.png)
+![Checkout](screenshots/checkout.jpeg)
 
 ## 💡 Project Highlights
 
