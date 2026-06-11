@@ -1,0 +1,45 @@
+/* ========================================
+   Responsive — All Media Queries
+   ======================================== */
+@media (max-width: 992px) {
+    .showcase-item { flex-direction: column !important; }
+    .showcase-img { width: 100%; }
+    .product-main { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 15px 20px; }
+    .nav-links {
+        position: fixed; top: 70px; right: -100%; background: var(--bg-secondary);
+        width: 250px; height: 100vh; flex-direction: column; padding: 40px 20px;
+        transition: 0.4s ease; box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .nav-links.active { right: 0; }
+    .nav-center { display: none; }
+    .menu-toggle { display: block; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1rem; width: 100%; border-right: none; animation: none; white-space: normal; }
+    .game-grid, .store-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    .section-title { font-size: 1.8rem; }
+    .cart-container, .checkout-container { grid-template-columns: 1fr; }
+    .order-summary { position: static; }
+    .store-toolbar { flex-direction: column; align-items: stretch; }
+    .auth-card { padding: 30px 25px; }
+    .form-row { grid-template-columns: 1fr; }
+    .checkout-steps { gap: 5px; }
+    .step-line { width: 30px; margin: 0 5px; }
+    .page-header h1 { font-size: 1.8rem; }
+    .nav-icons { gap: 15px; }
+    .user-dropdown { right: -50px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2rem; }
+    .hero-cta { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    .game-grid, .store-grid { grid-template-columns: 1fr; }
+    .cart-item { flex-direction: column; align-items: flex-start; }
+    .cart-item-image { width: 100%; height: 150px; }
+    .product-actions { flex-direction: column; }
+    .product-actions .btn-primary, .product-actions .btn-cart, .product-actions .btn-wishlist { width: 100%; }
+}

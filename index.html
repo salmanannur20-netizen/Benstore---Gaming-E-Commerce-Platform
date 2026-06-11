@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benstore | Premium Game Collections</title>
+    <meta name="description" content="Premium game store for hardcore gamers. Explore Elden Ring, Sekiro, Bloodborne, and more.">
+
+    <!-- CSS Modules -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <h2><a href="index.html">&copy;<span>Ben</span>store</a></h2>
+        </div>
+
+        <div class="nav-center">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search premium games..." onkeypress="if(event.key === 'Enter') window.location.href='pages/store.html?q='+this.value">
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+                <li><a href="pages/store.html"><i class="fas fa-gamepad"></i> Store</a></li>
+                <li><a href="#showcase"><i class="fas fa-fire"></i> Showcase</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="wishlist-icon" onclick="window.location.href='pages/wishlist.html'">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-badge">0</span>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </div>
+                <div class="user-icon" id="userIcon">
+                    <i class="fas fa-user"></i>
+                    <div class="user-dropdown" id="userDropdown">
+                        <!-- Populated by Auth.js -->
+                    </div>
+                </div>
+                <span id="userGreeting" class="user-greeting"></span>
+                <div class="menu-toggle" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay"></div>
+    <div class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3>Your Cart</h3>
+            <button class="cart-sidebar-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-sidebar-items">
+            <!-- Rendered by Cart.js -->
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-sidebar-total">
+                <span>Subtotal</span>
+                <span class="amount">Rp 0</span>
+            </div>
+            <div class="cart-sidebar-actions">
+                <a href="pages/cart.html" class="btn-secondary">View Cart</a>
+                <a href="pages/checkout.html" class="btn-primary">Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to <span>Ben</span>store</h1>
+            <p class="hero-subtitle">Sorry.. Are you gamers?</p>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="window.location.href='pages/store.html'">Explore Store</button>
+                <button class="btn-secondary" onclick="document.getElementById('showcase').scrollIntoView({behavior: 'smooth'})">Featured Games</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Info Panel -->
+    <section class="info-panel">
+        <div class="info-container reveal">
+            <div class="info-card">
+                <i class="fas fa-check-double"></i>
+                <h4>Trusted Platform</h4>
+                <p>100% verified authentic game keys.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Secure Payment</h4>
+                <p>Encrypted checkout process.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-gem"></i>
+                <h4>Premium Quality</h4>
+                <p>Hand-picked top-tier games only.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-headset"></i>
+                <h4>24/7 Support</h4>
+                <p>We are here for you anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Games Collection -->
+    <section class="games" id="games">
+        <div class="games-container reveal">
+            <h2 class="section-title">Top Collection</h2>
+            <hr class="custom-hr">
+
+            <div class="game-grid" id="topGamesGrid">
+                <!-- Rendered by App.js (top 3 games) -->
+            </div>
+            
+            <div class="view-all-link">
+                <a href="pages/store.html">View All Games <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase -->
+    <section class="showcase" id="showcase">
+        <div class="showcase-container">
+            <h2 class="section-title reveal">Featured Showcase</h2>
+            <hr class="custom-hr reveal">
+
+            <div class="showcase-item reveal">
+                <div class="showcase-img">
+                    <img src="assets/images/showcase/Elden-Ring-Nightreign-1024x576.jpg" alt="Elden Ring Nightreign">
+                </div>
+                <div class="showcase-text">
+                    <h3><span>Elden Ring:</span> Night Reign</h3>
+                    <p>Step into the shadow of a dying world in Elden Ring: Night Reign — where the light has long surrendered, and only the relentless endure. In this unforgiving realm, every step forward is a gamble, every enemy a test, and every victory earned through blood and resolve.</p>
+                    <p>Explore a hauntingly beautiful landscape swallowed by darkness, uncover forgotten secrets, and face creatures born from the abyss.</p>
+                    <button class="btn-primary" onclick="window.location.href='pages/product.html?id=7'">Pre-Order Edition</button>
+                </div>
+            </div>
+
+            <div class="showcase-item reveal">
+                <div class="showcase-img">
+                    <img src="assets/images/showcase/crimson.jpg" alt="Crimson Desert">
+                </div>
+                <div class="showcase-text">
+                    <h3><span>Crimson</span> Desert</h3>
+                    <p>Step into the relentless world of Crimson Desert — a land torn apart by endless war, where power is claimed through blood, and loyalty is as fragile as the blades that bind it. Amid fallen kingdoms and rising chaos, you are not merely a survivor, but a warrior forged by hardship.</p>
+                    <p>Journey across a vast and unforgiving realm filled with brutal battles, shifting alliances, and stories buried beneath the dust of conflict.</p>
+                    <button class="btn-primary" onclick="window.location.href='pages/product.html?id=8'">Pre-Order Edition</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery -->
+    <section class="gallery">
+        <h2 class="section-title reveal">Visual Xperience</h2>
+        <hr class="custom-hr reveal">
+        <div class="gallery-container reveal">
+            <div class="gallery-item">
+                <video class="gallery-video" muted loop playsinline poster="assets/images/games/elden-ring.jpg">
+                    <source src="assets/videos/IMG_9059.MOV" type="video/mp4">
+                </video>
+                <div class="gallery-overlay"><span>Combat Moments</span></div>
+            </div>
+            <div class="gallery-item">
+                <video class="gallery-video" muted loop playsinline poster="assets/images/games/sekiro.jpg">
+                    <source src="assets/videos/IMG_9060.MOV" type="video/mp4">
+                </video>
+                <div class="gallery-overlay"><span>Epic Boss Fights</span></div>
+            </div>
+            <div class="gallery-item">
+                <video class="gallery-video" muted loop playsinline poster="assets/images/games/Bloodborne-1030x579.jpg">
+                    <source src="assets/videos/IMG_9057.MP4" type="video/mp4">
+                </video>
+                <div class="gallery-overlay"><span>Dark Atmosphere</span></div>
+            </div>
+            <div class="gallery-item">
+                <video class="gallery-video" muted loop playsinline poster="assets/images/games/DarkSouls3.jpg">
+                    <source src="assets/videos/IMG_9058.MP4" type="video/mp4">
+                </video>
+                <div class="gallery-overlay"><span>Ashen Ones</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title reveal">Gamer Reviews</h2>
+        <hr class="custom-hr reveal">
+        <div class="testi-container reveal">
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p class="testi-text">"Best store for getting hardcore games. The delivery is instant and the support is amazing!"</p>
+                <div class="testi-user">
+                    <img src="assets/images/testimonials/6-elden-ring-tarnished-lac-lac.jpg" alt="User">
+                    <div class="testi-user-info">
+                        <h5>Tarnished One</h5>
+                        <span>Elden Lord</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p class="testi-text">"Say i can't law and!"</p>
+                <div class="testi-user">
+                    <img src="assets/images/testimonials/q9ogv.jpg" alt="User">
+                    <div class="testi-user-info">
+                        <h5>Solo Guy</h5>
+                        <span>Just Play</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p class="testi-text">"I got my Sekiro Deluxe Edition here cheaper than anywhere else. Highly recommended."</p>
+                <div class="testi-user">
+                    <img src="assets/images/testimonials/d05b54c356bbdd9475e39167a10f9504.jpg" alt="User">
+                    <div class="testi-user-info">
+                        <h5>Wolf</h5>
+                        <span>Shinobi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p class="testi-text">"Absolutely worth it. The visuals are stunning and the gameplay feels incredibly smooth. Easily one of the best purchases I’ve made this year."</p>
+                <div class="testi-user">
+                    <img src="assets/images/testimonials/_103330503_musk3.jpg" alt="User">
+                    <div class="testi-user-info">
+                        <h5>Elon Musk</h5>
+                        <span>CEO of Tesla</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p class="testi-text">"Addictive and beautifully crafted. From the atmosphere to the mechanics, everything feels well thought out. I lost track of time playing this."</p>
+                <div class="testi-user">
+                    <img src="assets/images/testimonials/stephin-paul-fight-club.jpg" alt="User">
+                    <div class="testi-user-info">
+                        <h5>Brad Pitt</h5>
+                        <span>Actor</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p class="testi-text">"I told you elden ring is the best game ever made."</p>
+                <div class="testi-user">
+                    <img src="assets/images/testimonials/n.jpg" alt="User">
+                    <div class="testi-user-info">
+                        <h5>Maliketh</h5>
+                        <span>Beast Clergyman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>&copy;<span>Ben</span>store</h3>
+                <p>Your ultimate destination for premium, hardcore, and dark fantasy games. Enter the abyss with us.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/sxannur/"><i class="fab fa-instagram"></i></a>   
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="pages/store.html">Store</a></li>
+                    <li><a href="pages/wishlist.html">Wishlist</a></li>
+                    <li><a href="pages/cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe for exclusive deals and pre-order announcements.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to newsletter!', 'success');">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Benstore. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
