@@ -59,7 +59,7 @@ Wishlist feature enabling users to save favorite products for future purchases.
 
 Streamlined checkout process for reviewing orders and completing purchases.
 
-![Checkout](Checkout.jpeg)
+![Checkout](screenshots/Checkout.jpeg)
 
 ## 💡 Project Highlights
 
