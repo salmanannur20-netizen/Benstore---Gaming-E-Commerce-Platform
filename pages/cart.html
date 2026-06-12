@@ -1,114 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart | Benstore</title>
     <!-- CSS Modules -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/pages/cart.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/all.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/pages/cart.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/all.css" />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar scrolled" id="navbar">
-        <div class="nav-logo">
-            <h2><a href="../index.html">&copy;<span>Ben</span>store</a></h2>
-        </div>
+      <div class="nav-logo">
+        <h2><a href="../index.html">&copy;<span>Ben</span>store</a></h2>
+      </div>
 
-        <div class="nav-right">
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html"><i class="fas fa-house"></i> Home</a></li>
-                <li><a href="store.html"><i class="fas fa-gamepad"></i> Store</a></li>
-            </ul>
-            <div class="nav-icons">
-                <div class="wishlist-icon" onclick="window.location.href='wishlist.html'">
-                    <i class="fas fa-heart"></i>
-                    <span class="wishlist-badge">0</span>
-                </div>
-                <div class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge">0</span>
-                </div>
-                <div class="user-icon" id="userIcon">
-                    <i class="fas fa-user"></i>
-                    <div class="user-dropdown" id="userDropdown"></div>
-                </div>
-                <span id="userGreeting" class="user-greeting"></span>
-                <div class="menu-toggle" id="mobileMenu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="../index.html"><i class="fas fa-house"></i> Home</a>
+          </li>
+          <li>
+            <a href="store.html"><i class="fas fa-gamepad"></i> Store</a>
+          </li>
+        </ul>
+        <div class="nav-icons">
+          <div
+            class="wishlist-icon"
+            onclick="window.location.href = 'wishlist.html'"
+          >
+            <i class="fas fa-heart"></i>
+            <span class="wishlist-badge">0</span>
+          </div>
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge">0</span>
+          </div>
+          <div class="user-icon" id="userIcon">
+            <i class="fas fa-user"></i>
+            <div class="user-dropdown" id="userDropdown"></div>
+          </div>
+          <span id="userGreeting" class="user-greeting"></span>
+          <div class="menu-toggle" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Cart Sidebar -->
     <div class="cart-overlay"></div>
     <div class="cart-sidebar">
-        <div class="cart-sidebar-header">
-            <h3>Your Cart</h3>
-            <button class="cart-sidebar-close"><i class="fas fa-times"></i></button>
+      <div class="cart-sidebar-header">
+        <h3>Your Cart</h3>
+        <button class="cart-sidebar-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="cart-sidebar-items"></div>
+      <div class="cart-sidebar-footer">
+        <div class="cart-sidebar-total">
+          <span>Subtotal</span>
+          <span class="amount">Rp 0</span>
         </div>
-        <div class="cart-sidebar-items"></div>
-        <div class="cart-sidebar-footer">
-            <div class="cart-sidebar-total">
-                <span>Subtotal</span>
-                <span class="amount">Rp 0</span>
-            </div>
-            <div class="cart-sidebar-actions">
-                <a href="checkout.html" class="btn-primary">Checkout</a>
-            </div>
+        <div class="cart-sidebar-actions">
+          <a href="checkout.html" class="btn-primary">Checkout</a>
         </div>
+      </div>
     </div>
 
     <header class="page-header">
-        <h1>Shopping Cart</h1>
-        <div class="breadcrumb">
-            <a href="../index.html">Home</a> / <span>Cart</span>
-        </div>
+      <h1>Shopping Cart</h1>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a> / <span>Cart</span>
+      </div>
     </header>
 
     <section class="cart-section">
-        <div class="cart-container" id="cartPageContainer">
-            <!-- Items rendered via JS inline here for simplicity since we don't have a dedicated cart page JS -->
-            <div class="cart-items" id="cartPageItems">
-                <!-- Rendered dynamically -->
-            </div>
-            <div class="order-summary" id="cartPageSummary" style="display: none;">
-                <h3>Order Summary</h3>
-                <div class="summary-row">
-                    <span>Items</span>
-                    <span id="summaryCount">0</span>
-                </div>
-                <div class="summary-row">
-                    <span>Subtotal</span>
-                    <span id="summarySubtotal">Rp 0</span>
-                </div>
-                <div class="summary-row">
-                    <span>Tax (11%)</span>
-                    <span id="summaryTax">Rp 0</span>
-                </div>
-                <div class="summary-row total">
-                    <span>Total</span>
-                    <span id="summaryTotal">Rp 0</span>
-                </div>
-                <div class="summary-actions">
-                    <button class="btn-primary" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
-                    <button class="btn-secondary" onclick="window.location.href='store.html'">Continue Shopping</button>
-                </div>
-            </div>
+      <div class="cart-container" id="cartPageContainer">
+        <!-- Items rendered via JS inline here for simplicity since we don't have a dedicated cart page JS -->
+        <div class="cart-items" id="cartPageItems">
+          <!-- Rendered dynamically -->
         </div>
+        <div class="order-summary" id="cartPageSummary" style="display: none">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Items</span>
+            <span id="summaryCount">0</span>
+          </div>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summarySubtotal">Rp 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Tax (11%)</span>
+            <span id="summaryTax">Rp 0</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="summaryTotal">Rp 0</span>
+          </div>
+          <div class="summary-actions">
+            <button
+              class="btn-primary"
+              onclick="window.location.href = 'checkout.html'"
+            >
+              Proceed to Checkout
+            </button>
+            <button
+              class="btn-secondary"
+              onclick="window.location.href = 'store.html'"
+            >
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-bottom">
-            <p>&copy; 2026 Benstore. All Rights Reserved.</p>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Benstore. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <!-- Scripts -->
@@ -118,14 +134,14 @@
     <script src="../js/auth.js"></script>
     <script src="../js/app.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function renderCartPage() {
-                const cart = Cart.getCart();
-                const itemsContainer = document.getElementById('cartPageItems');
-                const summaryContainer = document.getElementById('cartPageSummary');
-                
-                if (cart.length === 0) {
-                    itemsContainer.innerHTML = `
+      document.addEventListener("DOMContentLoaded", () => {
+        function renderCartPage() {
+          const cart = Cart.getCart();
+          const itemsContainer = document.getElementById("cartPageItems");
+          const summaryContainer = document.getElementById("cartPageSummary");
+
+          if (cart.length === 0) {
+            itemsContainer.innerHTML = `
                         <div class="cart-empty">
                             <i class="fas fa-shopping-basket"></i>
                             <h2>Your Cart is Empty</h2>
@@ -133,22 +149,23 @@
                             <a href="store.html" class="btn-primary" style="display:inline-block;padding:15px 30px;">Explore Store</a>
                         </div>
                     `;
-                    summaryContainer.style.display = 'none';
-                    return;
-                }
+            summaryContainer.style.display = "none";
+            return;
+          }
 
-                summaryContainer.style.display = 'block';
-                itemsContainer.innerHTML = cart.map(item => {
-                    const p = getProductById(item.id);
-                    if (!p) return '';
-                    return `
+          summaryContainer.style.display = "block";
+          itemsContainer.innerHTML = cart
+            .map((item) => {
+              const p = getProductById(item.id);
+              if (!p) return "";
+              return `
                         <div class="cart-item">
                             <div class="cart-item-image">
                                 <img src="${resolveAssetPath(p.image)}" alt="${p.title}">
                             </div>
                             <div class="cart-item-info">
                                 <h3><a href="product.html?id=${p.id}">${p.title}</a></h3>
-                                <span class="cart-item-genre">${p.genre} • ${p.platform.join(', ')}</span>
+                                <span class="cart-item-genre">${p.genre} • ${p.platform.join(", ")}</span>
                                 <div class="cart-item-bottom">
                                     <span class="cart-item-price">${formatPrice(p.price)}</span>
                                     <div class="cart-qty-controls">
@@ -163,20 +180,24 @@
                             </div>
                         </div>
                     `;
-                }).join('');
+            })
+            .join("");
 
-                const count = Cart.getCartCount();
-                const subtotal = Cart.getCartTotal();
-                const tax = Math.floor(subtotal * 0.11);
-                
-                document.getElementById('summaryCount').textContent = count;
-                document.getElementById('summarySubtotal').textContent = formatPrice(subtotal);
-                document.getElementById('summaryTax').textContent = formatPrice(tax);
-                document.getElementById('summaryTotal').textContent = formatPrice(subtotal + tax);
-            }
+          const count = Cart.getCartCount();
+          const subtotal = Cart.getCartTotal();
+          const tax = Math.floor(subtotal * 0.11);
 
-            renderCartPage();
-        });
+          document.getElementById("summaryCount").textContent = count;
+          document.getElementById("summarySubtotal").textContent =
+            formatPrice(subtotal);
+          document.getElementById("summaryTax").textContent = formatPrice(tax);
+          document.getElementById("summaryTotal").textContent = formatPrice(
+            subtotal + tax,
+          );
+        }
+
+        renderCartPage();
+      });
     </script>
-</body>
+  </body>
 </html>
